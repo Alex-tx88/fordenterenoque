@@ -1,59 +1,58 @@
-# Enoque
+# Projeto: FordEnter (Enoque)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+[cite_start]**Disciplina:** DevOps Tools e Gerência de Configurações e Dependências - I Unidade [cite: 2, 3]
+[cite_start]**Instituição:** UNINASSAU [cite: 5]
+**Equipe:**
+1. Alex Teixeira de Jesus
+2. Thales Araujo
+3. Enoque Pereira
+4. José Heitor
 
-## Development server
+---
 
-To start a local development server, run:
+## 1. Descrição do projeto
+O **EncomendasSmart** é uma aplicação web desenvolvida para otimizar o gerenciamento e controle de correspondências e pacotes em condomínios. O sistema permite o registro detalhado de novas encomendas, o acompanhamento de seus status de entrega (pendente, notificado ou retirado) e a visualização de métricas operacionais e históricos através de um painel interativo (dashboard).
 
-```bash
-ng serve
-```
+## 2. Objetivo da solução
+O objetivo central do **EncomendasSmart** é digitalizar e modernizar o fluxo de recebimento e distribuição de pacotes em condomínios. A solução foi criada para resolver problemas comuns de portarias, como a perda de informações, o acúmulo desorganizado de caixas e a falta de rastreabilidade, substituindo os antigos cadernos de anotações por um controle digital rápido, seguro e eficiente.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## 3. Tecnologias utilizadas
+[cite_start]As seguintes ferramentas e tecnologias foram aplicadas na construção deste projeto:
+* **Frontend:** Angular CLI (versão 19.2.15), HTML, CSS, TypeScript, JavaScript
+* **Controle de Versão:** Git e GitHub
+* **Continuous Integration (CI):** GitHub Actions
+* **Prototipação:** Figma
+* [cite_start]**Gerenciamento do Projeto:** Trello
 
-## Code scaffolding
+## 4. Estrutura do repositório
+[cite_start]O projeto segue a arquitetura padrão do Angular, organizada da seguinte forma: 
+* `/.github/workflows/`: Contém os arquivos de configuração do pipeline de CI (ex: `ci.yml`).
+* `/src/app/auth/`: Componentes de autenticação (Login e Registro).
+* `/src/app/components/main/`: Telas principais do sistema, como Dashboard e Histórico.
+* `/src/app/core/`: Serviços e modelos de dados (ex: `entrega.service.ts`).
+* `/src/app/shared/`: Componentes reutilizáveis, como cards de entrega e modais.
+* `README.md`: Documentação principal do projeto.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 5. Continuous Integration (CI) - Workflow e Pipeline
+Para garantir a integridade do código, implementamos uma esteira de Continuous Integration utilizando o GitHub Actions.
 
-```bash
-ng generate component component-name
-```
+### Explicação do Workflow (`ci.yml`)
+O arquivo `ci.yml` define as regras de execução. O gatilho (trigger) configurado faz com que o pipeline seja executado **automaticamente sempre que ocorrer um evento de `push`** na branch principal (`main`) do repositório.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Fluxo de execução do pipeline
+Quando o pipeline é acionado, ele provisiona uma máquina virtual (runner) e executa sequencialmente os seguintes passos (jobs):
+1. **Exibir mensagem no console:** Confirma o início do processo de validação.
+2. **Executar script do projeto:** Realiza a instalação das dependências (ex: `npm install`) e tenta "buildar" o projeto para garantir que não há erros de compilação.
+3. **Listar arquivos do projeto / Validar execução:** Verifica a estrutura do repositório e atesta que os arquivos de build foram gerados corretamente.
 
-```bash
-ng generate --help
-```
+Dessa forma, a **explicação do pipeline** se resume a garantir de forma automatizada que nenhum código que quebre a aplicação seja integrado acidentalmente ao repositório principal, aplicando princípios modernos de DevOps.
 
-## Building
+---
+## 6. Como rodar o projeto localmente (Ambiente de Desenvolvimento)
 
-To build the project run:
+Siga os passos abaixo para configurar e executar o projeto em sua máquina:
 
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Instale as dependências:**
+   Antes de rodar o projeto pela primeira vez, certifique-se de instalar todas as dependências do Node.js necessárias executando o comando abaixo na raiz do projeto:
+   ```bash
+   npm install
