@@ -1,6 +1,5 @@
 name: Pipeline de CI - EncomendasSmart
 
-# Executa o pipeline a cada push ou pull request na branch main
 on:
   push:
     branches: [ "main" ]
@@ -10,33 +9,31 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
-    # 1. Baixa o código do repositório
     - name: Checkout do código
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 0 
 
-    # 2. Configura o ambiente Node.js (necessário para Angular)
     - name: Configurar Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '20' 
         cache: 'npm'
 
-    # 3. Exibir mensagem no console 
     - name: Mensagem de Início
       run: echo "Iniciando o processo de Integração Contínua para o projeto EncomendasSmart..."
 
-    # 4. Instalar dependências
     - name: Instalar dependências
       run: npm install
 
-    # 5. Executar script do projeto (Requisito do PDF - Build do Angular)
     - name: Validar Build do Projeto
       run: npm run build -- --configuration production
 
-    # 6. Listar arquivos para validar execução 
     - name: Listar arquivos gerados
       run: |
         echo "Listando arquivos do diretório de build:"
-        ls -R dist/
+        ls -R dist/ || echo "Diretório dist não encontrado. Verifique o log do build."
