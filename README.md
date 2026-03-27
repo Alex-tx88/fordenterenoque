@@ -24,7 +24,7 @@ As seguintes ferramentas e tecnologias foram aplicadas na construção deste pro
 * **Prototipação:** Figma
 * **Gerenciamento do Projeto:** Trello
 
-## 4. Estrutura do repositório
+## 4. Estrutura do repositorio
 O projeto segue a arquitetura padrão do Angular, organizada da seguinte forma:
 * `/.github/workflows/`: Contém os arquivos de configuração do pipeline de CI (ex: `ci.yml`).
 * `/src/app/auth/`: Componentes de autenticação (Login e Registro).
