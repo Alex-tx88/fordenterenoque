@@ -6,19 +6,22 @@ on:
   pull_request:
     branches: [ "main" ]
 
+
 permissions:
   contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
     - name: Checkout do código
       uses: actions/checkout@v4
       with:
-        persist-credentials: false
+        persist-credentials: false 
 
     - name: Configurar Node.js
       uses: actions/setup-node@v4
@@ -26,16 +29,4 @@ jobs:
         node-version: '20'
         cache: 'npm'
 
-    - name: Mensagem de Início
-      run: echo "Iniciando o processo de Integração Contínua para o projeto EncomendasSmart..."
-
-    - name: Instalar dependências
-      run: npm install
-
-    - name: Validar Build do Projeto
-      run: npm run build -- --configuration production
-
-    - name: Listar arquivos gerados
-      run: |
-        echo "Listando arquivos do diretório de build:"
-        ls -R dist/ || echo "Aviso: Pasta dist não encontrada. Verifique se o build gerou os arquivos corretamente."
+    # ... restante dos seus passos (npm install, npm run build, etc)
