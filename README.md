@@ -1,12 +1,12 @@
-# Projeto: FordEnter (Enoque)
+# Projeto: EncomendasSmart
 
-[cite_start]**Disciplina:** DevOps Tools e Gerência de Configurações e Dependências - I Unidade [cite: 2, 3]
-[cite_start]**Instituição:** UNINASSAU [cite: 5]
+**Disciplina:** DevOps Tools e Gerência de Configurações e Dependências
+**Instituição:** UNINASSAU
 **Equipe:**
 1. Alex Teixeira de Jesus
-2. Thales Araujo
-3. Enoque Pereira
-4. José Heitor
+2. Thales Macêdo de Jesus Araújo
+3. Enoque Pereira Santos Neto
+4. José Heitor Batista dos Santos
 
 ---
 
@@ -17,15 +17,15 @@ O **EncomendasSmart** é uma aplicação web desenvolvida para otimizar o gerenc
 O objetivo central do **EncomendasSmart** é digitalizar e modernizar o fluxo de recebimento e distribuição de pacotes em condomínios. A solução foi criada para resolver problemas comuns de portarias, como a perda de informações, o acúmulo desorganizado de caixas e a falta de rastreabilidade, substituindo os antigos cadernos de anotações por um controle digital rápido, seguro e eficiente.
 
 ## 3. Tecnologias utilizadas
-[cite_start]As seguintes ferramentas e tecnologias foram aplicadas na construção deste projeto:
+As seguintes ferramentas e tecnologias foram aplicadas na construção deste projeto:
 * **Frontend:** Angular CLI (versão 19.2.15), HTML, CSS, TypeScript, JavaScript
 * **Controle de Versão:** Git e GitHub
 * **Continuous Integration (CI):** GitHub Actions
 * **Prototipação:** Figma
-* [cite_start]**Gerenciamento do Projeto:** Trello
+* **Gerenciamento do Projeto:** Trello
 
 ## 4. Estrutura do repositório
-[cite_start]O projeto segue a arquitetura padrão do Angular, organizada da seguinte forma: 
+O projeto segue a arquitetura padrão do Angular, organizada da seguinte forma:
 * `/.github/workflows/`: Contém os arquivos de configuração do pipeline de CI (ex: `ci.yml`).
 * `/src/app/auth/`: Componentes de autenticação (Login e Registro).
 * `/src/app/components/main/`: Telas principais do sistema, como Dashboard e Histórico.
@@ -56,3 +56,7 @@ Siga os passos abaixo para configurar e executar o projeto em sua máquina:
    Antes de rodar o projeto pela primeira vez, certifique-se de instalar todas as dependências do Node.js necessárias executando o comando abaixo na raiz do projeto:
    ```bash
    npm install
+2. **Execute o servidor de desenvolvimento:**
+   Para iniciar a aplicação localmente, utilize o comando:
+   ```bash
+   ng serve
