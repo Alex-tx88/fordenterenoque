@@ -6,22 +6,24 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true 
     steps:
     - name: Checkout do código
       uses: actions/checkout@v4
       with:
-        fetch-depth: 0 
+        persist-credentials: false
 
     - name: Configurar Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20' 
+        node-version: '20'
         cache: 'npm'
 
     - name: Mensagem de Início
@@ -36,4 +38,4 @@ jobs:
     - name: Listar arquivos gerados
       run: |
         echo "Listando arquivos do diretório de build:"
-        ls -R dist/ || echo "Diretório dist não encontrado. Verifique o log do build."
+        ls -R dist/ || echo "Aviso: Pasta dist não encontrada. Verifique se o build gerou os arquivos corretamente."
