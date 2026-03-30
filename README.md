@@ -63,7 +63,6 @@ Se ao tentar rodar o comando `npm install` você receber um erro de segurança (
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 
-
 ## 7. Como rodar o projeto localmente (Ambiente de Desenvolvimento)
 
 Siga os passos abaixo para configurar e executar o projeto em sua máquina:
