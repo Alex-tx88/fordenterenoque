@@ -47,7 +47,7 @@ Quando o pipeline é acionado, ele provisiona uma máquina virtual (runner) e ex
 
 Dessa forma, a **explicação do pipeline** se resume a garantir de forma automatizada que nenhum código que quebre a aplicação seja integrado acidentalmente ao repositório principal, aplicando princípios modernos de DevOps.
 
-## 6. Baseline (Requisitos e Preparação - Versão Única v0.0.0)
+## 6. Baseline (Requisitos e Preparação - Versão Única v1.0.0)
 
 Este projeto foi consolidado em uma **versão única (v0.0.0)**. Para garantir que o ambiente de execução local reflita fielmente o estado do projeto, siga as diretrizes abaixo:
 
