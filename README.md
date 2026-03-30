@@ -47,8 +47,24 @@ Quando o pipeline é acionado, ele provisiona uma máquina virtual (runner) e ex
 
 Dessa forma, a **explicação do pipeline** se resume a garantir de forma automatizada que nenhum código que quebre a aplicação seja integrado acidentalmente ao repositório principal, aplicando princípios modernos de DevOps.
 
----
-## 6. Como rodar o projeto localmente (Ambiente de Desenvolvimento)
+## 6. Baseline (Requisitos e Preparação - Versão Única v0.0.0)
+
+Este projeto foi consolidado em uma **versão única (v0.0.0)**. Para garantir que o ambiente de execução local reflita fielmente o estado do projeto, siga as diretrizes abaixo:
+
+### 1. Requisitos de Software
+* **Node.js:** Versão 18.x ou superior (Recomendado: 22.x LTS).
+* **Angular Framework:** Versão **19.2.0** (Gerenciado localmente, sem necessidade de instalação global).
+* **TypeScript:** Versão **~5.7.2**.
+* **Gerenciador de Pacotes:** npm (versão 10 ou superior).
+
+### 2. Configuração de Permissões (Apenas Windows/PowerShell)
+Se ao tentar rodar o comando `npm install` você receber um erro de segurança (`PSSecurityException`), execute o comando abaixo no seu terminal para habilitar a execução de scripts locais:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+
+
+## 7. Como rodar o projeto localmente (Ambiente de Desenvolvimento)
 
 Siga os passos abaixo para configurar e executar o projeto em sua máquina:
 
